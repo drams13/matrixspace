@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatrixSpace Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+
+    <!-- =========================================
+         1. LA BARRE DE NAVIGATION (HEADER)
+         ========================================= -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-inner">
+                <!-- Logo (SVG simplifié) -->
+                <a href="#" class="nav-logo">
+                    <svg viewBox="0 0 182 26" fill="#1a1a1a" width="140">
+                        <!-- J'ai pris le chemin du logo depuis le code source -->
+                        <path d="M2.18731 15.6764C0.828134 14.0263 0 11.9302 0 9.62235C0 3.57576 5.57412 -1.1701 11.8613 0.257002C15.3112 1.03745 18.115 3.82475 18.9431 7.26615C19.7229 10.4994 18.8428 13.5023 17.0194 15.6987C16.455 16.3788 15.3966 16.3639 14.821 15.6913L10.71 10.8971C10.1344 10.2244 9.09833 10.2244 8.52272 10.8971L4.41176 15.6875C3.82873 16.3676 2.75921 16.3639 2.18731 15.6727V15.6764ZM9.61452 14.1452C7.92112 14.1452 6.54708 15.5203 6.54708 17.215C6.54708 18.9097 7.92112 20.2847 9.61452 20.2847C11.3079 20.2847 12.682 18.9097 12.682 17.215C12.682 15.5203 11.3079 14.1452 9.61452 14.1452Z" fill="currentColor"></path>
+                        <!-- Le texte du logo a été retiré pour simplifier, on garde l'icône pour l'instant -->
+                        <text x="25" y="20" font-family="Arial, sans-serif" font-weight="bold" font-size="25" fill="#1a1a1a">Matrix<tspan fill="rgb(129, 127, 131)">Space</tspan></text>
+                    </svg>
+                </a>
+
+                 <!-- Liens du menu -->
+            <ul class="nav-links">
+                
+                <!-- Lien simple -->
+                <li><a href="#">Technologie</a></li>
+
+                <!-- DROPDOWN PRODUCTS -->
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="nav-link-trigger">Produits ▾</a>
+                    <div id="products-dropdown" class="dropdown-menu">
+                        
+                        <div class="dropdown-grid">
+                            <a href="#" class="dropdown-item">
+                                <div class="item-icon icon-ia">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18m6-18v18M3 9h18M3 15h18"/></svg>
+                                </div>
+                                <h4>Plateforme d'IA MatrixSpace</h4>
+                                <p>Logiciel d'entreprise et en périphérie alimentant les alertes spatiales, le renseignement unifié sur les ménaces, l'évolutivité et la resilience. </p>
+                                <span class="learn-more">Apprendre encore plus ↗</span>
+                            </a>
+                            
+                            <a href="#" class="dropdown-item">
+                                <div class="item-icon icon-fusion">
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                 </div>
+                                <h4>Fusion MatrixSpace 360°</h4>
+                                <p>Détection C-UAS multisensorielle et en réseau, facilement adaptable pour offrir une défense en profondeur multicouche.</p>
+                                <span class="learn-more">Apprendre encore plus ↗</span>
+                            </a>
+            
+                            <a href="#" class="dropdown-item">
+                                <div class="item-icon icon-radar">
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 12L19 7.5M12 12V2"/></svg>
+                                </div>
+                                <h4>Radar MatrixSpace 360°</h4>
+                                <p>Systèmes de capteurs multiradar fixes et portables qui se combinent pour assurer une surveillance étendue de l'espace aérien à basse altitude.</p>
+                                <span class="learn-more">Apprendre encore plus ↗</span>
+                            </a>
+            
+                            <a href="#" class="dropdown-item">
+                                <div class="item-icon icon-exp">
+                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2zM16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                                </div>
+                                <h4>Radar expéditionnaire</h4>
+                                <p>Le système radar tout-en-un le plus performant pour une utilisation tactique par les forces de sécurité en première ligne.</p>
+                                <span class="learn-more">Apprendre encore plus ↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Autres liens (Placeholder pour l'instant) -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link-trigger">Cas d'utilisation ▾</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link-trigger">Industries ▾</a>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link-trigger">Entreprise ▾</a>
+                    <ul class="dropdown-menu dropdown-list">
+                        
+                        <li>
+                            <a href="#">
+                                <svg class="icon-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10l4 4v10a2 2 0 0 1-2 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                <span>Actualités de l'entreprise</span>
+                                <span class="arrow-blue">↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                 <span>À propos de nous</span>
+                                 <span class="arrow-blue">↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                                <span>Carrières</span>
+                                <span class="arrow-blue">↗</span>
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <span>Événements</span>
+                                <span class="arrow-blue">↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><path d="M10 9l5 3-5 3z"></path></svg>
+                                <span>Vidéos</span>
+                                <span class="arrow-blue">↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+                                <span>Blog</span>
+                                    <span class="arrow-blue">↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <svg class="icon-min" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                <span>Partenaires</span>
+                                <span class="arrow-blue">↗</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
+            </ul>
+
+                <!-- Bouton CTA -->
+                <a href="#" class="btn-primary">Contactez le service commercial </a>
+
+                <!-- Bouton Menu Mobile (Burger) -->
+                <div class="mobile-menu-btn">☰</div>
+            </div>
+        </div>
+        <div>
+       
+    <div>
+        <p class="hero-text">
+                Déploiement partous.<br> Détection claire.Défense <br> assurée.
+        </p>
+    </div>
+    <!-- =========================================
+         2. LA SECTION HERO (L'écran d'accueil)
+         ========================================= -->
+    <header class="hero-section">
+        
+        <!-- Vidéo de fond (Lien récupéré depuis le code source) -->
+        <div class="hero-video">
+            <video autoplay muted loop playsinline>
+                <source src="https://matrixspace-assets.netlify.app/video/new-hero.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <!-- Overlay sombre pour que le texte soit lisible -->
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Contenu textuel par-dessus la vidéo -->
+        <div class="container-hero-content">
+            <h1 class="hero-title">
+                Notre plateforme de détection de drones combine<br>
+                l'IA, le radar et d'autres capteurs pour confirmer les<br>
+                menaces et accélérer la réaction. Bénéficiez d'une <br>
+                connaissance situationnelle complète et de <br>
+                performances de niveau militaire.
+            </h1>
+            
+            <div class="hero-cta">
+                <a href="#" class=" btn btn-secondary">Obtenez une demo</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Le reste du contenu viendra ici -->
+
+</body>
+</html>

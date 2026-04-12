@@ -1,0 +1,513 @@
+/* =========================================
+     1. RESET & VARIABLES (Base)
+     ========================================= */
+:root {
+    --bg-color: #050505;       /* Fond très sombre (presque noir) */
+    --text-color: #ffffff;     /* Texte blanc */
+    --accent-color: #ffffff;   /* Accents blancs */
+    --nav-height: 80px;        /* Hauteur de la barre de navigation */
+    --font-main: 'Inter', sans-serif; /* Police moderne */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: var(--text-color);
+    font-family: var(--font-main);
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+    -webkit-font-smoothing: antialiased; /* Rendu du texte plus net */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Utilitaire pour centrer le contenu */
+.container {
+    width: 90%;
+    max-width: 1400px; /* Largeur max comme sur le site original */
+    margin: 0 auto;
+}
+
+.container-hero-content{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Aligne à gauche comme l'original */
+    height: 100%;
+}
+
+
+
+
+/* =========================================
+     2. NAVBAR (Menu du haut)
+     ========================================= */
+.navbar {
+    position: relative; /* Le menu reste collé en haut quand on scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 1000; /* Au-dessus de la vidéo */
+    backdrop-filter: blur(10px); /* Effet de flou moderne derrière le menu */
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+/* Logo */
+.nav-logo svg {
+    display: block;
+    height: 40px; /* Ajuste la taille du logo */
+    color: #050505;
+
+}
+
+/* Liens */
+.nav-links {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+    color: #222121; /* Gris foncé par défaut */
+    transition: color 0.2s ease;
+}
+
+/* Dropdown menu (Produits, Cas d'utilisation, etc.) */
+.nav-item {
+    position: relative;
+}
+
+/* =========================================
+      POUR LA SECTION PRODUITS (Menu déroulant)
+     ========================================= */
+.dropdown-menu {
+
+    position: absolute;
+    top: calc(100% - 1px); /* Évite un petit espace qui coupe le hover */
+    left: 50%;
+     transform: translateX(-30%); /* Centre horizontalement */
+    width: 200vw; /* Prend toute la largeur de l'écran */
+    max-width: 1100px; /* Largeur max pour un menu plus serré */
+    background-color: #ffffff;
+    color: #2f2f2f;
+    border: 1px solid rgba(42, 54, 70, 0.14);
+    box-shadow: 0 15px 35px rgba(16, 25, 41, 0.18);
+    padding: 24px;
+    display: none;
+    z-index: 1000;  
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
+
+
+.dropdown-grid {
+    max-width: 1100px;      /* Même largeur que ton site pour que ce soit aligné */
+    margin: 0 10px;         /* Centre la grille */
+    padding: 0 10px;
+    /* Le secret pour les 4 colonnes de l'image */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+    width: 100%;
+}
+
+.item-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px; /* Bords arrondis modernes */
+    margin-bottom: 12px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-item:hover .item-icon {
+    transform: scale(1.1);
+    color: #1b4fd6; /* Accentue la couleur de l'icône au survol */
+}
+
+
+
+.nav-item:hover{
+    display: grid;
+    transform: translateY(-5px); /* La carte monte un petit peu */
+}
+
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #333;
+    gap: 10px;
+    background-color: #ffffff;
+    border: 1px solid transparent; 
+    transition: all 0.2s ease-in-out;
+    height: 100%; /* Important pour que toutes les cartes soient égales */
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f7fb;
+    border: 1px solid #e5e7eb; /* La bordure grise sur les 4 côtés */
+    border-radius: 10px;
+}
+
+
+
+.dropdown-item h4 {
+
+    margin-bottom: 8px;
+    color: #1a1a1a;
+    font-size: 1.15rem;
+
+   
+}
+
+.dropdown-item p {
+
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    flex: 1;             /* Prend l'espace disponible pour pousser le lien vers le bas */
+}
+
+.learn-more {
+    color: #737475;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    
+    /* Cache par défaut */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.learn-more:hover{
+    color: #1b4fd6;
+}
+
+.dropdown-item:hover .learn-more {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* =========================================
+     POUR LA SECTTION ENTREPRISE (Menu déroulant)
+     ========================================= */
+
+/* Style général des liens dans la liste Company */
+.dropdown-list li a {
+    display: flex;          /* Aligne icône et texte sur une ligne */
+    align-items: center;
+    padding: 25px 40px ; /* Espace autour du texte, plus à droite pour l'icône */
+    text-decoration: none;
+    width: 100%;         /* Prend toute la largeur des 320px */
+    color: #333;
+    box-sizing: border-box;
+    font-weight: 50; 
+    /* On prépare les bordures transparentes pour éviter que la ligne ne "saute" au survol */
+    border-top: 1px solid transparent; 
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease; /* Anime le fond, la couleur et les bordures */
+}
+
+.arrow-blue {
+    color: #9ca3af;
+    /* On retire les marges bizarres pour un alignement propre */
+    margin: 0;
+}
+
+/* L'EFFET AU SURVOL SUR TOUTES LES LIGNES */
+.dropdown-list li a:hover {
+    background-color: #f9fafb; /* Le fond gris clair */
+    
+    /* Les bordures subtiles apparaissent en haut et en bas de la ligne survolée */
+    border-top: 1px solid #d6d0d0; 
+    border-bottom: 1px solid #e2dede;
+}
+
+.dropdown-list li a span {
+    flex-grow: 1; /* CE SPAN PREND TOUT L'ESPACE VIDE */
+    color: #1a1a1a;        /* Un noir plus profond pour la lisibilité */
+    font-size: 1.05rem;    /* Un tout petit peu plus grand */
+    font-weight: 500;      /* Poids moyen pour que ce soit pro */
+    letter-spacing: -0.2px; /* Resserre un peu les lettres pour le style tech */
+    text-align: left;
+}
+
+.icon-min {
+    width: 30px;   /* Largeur fixe */
+    height: 30px;  /* Hauteur fixe */
+    margin-right: 25px; /* Espace entre l'icône et le texte */
+    display: block;
+    flex-shrink: 0;   
+}
+
+/* On s'assure que le SVG à l'intérieur ne dépasse pas */
+.dropdown-list svg {
+    max-width: 30px; 
+    max-height: 30px;
+   
+}
+
+.dropdown-menu.dropdown-list {
+    /* Largeur fixe pour éviter le vide à droite */
+    width: 320px; 
+    min-width: 300px;
+    
+    /* Centre le menu sous le bouton Company */
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% - 1px); /* Évite le petit espace qui coupe le hover */
+
+
+    /* On garde ta structure une colonne */
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 10px 0; /* Espace en haut et en bas */
+    
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+.dropdown-list li a:hover .icon-min {
+    stroke: #2563eb; /* Change la couleur du contour du SVG */
+    /* Si tes SVG utilisent 'fill', utilise : fill: #2563eb; */
+}
+
+.dropdown-list li a .arrow-blue {
+    margin-left: auto;
+    color: #2563eb;
+    font-size: 1.2rem;
+    
+    /* On la rend invisible */
+    opacity: 0;
+    transform: translateX(-10px); /* Elle commence un peu décalée à gauche */
+    transition: all 0.3s ease;    /* Animation fluide */
+}
+
+.dropdown-list li a:hover .arrow-blue {
+   opacity: 1;                /* Devient visible */
+    transform: translateX(5px);  /* Reprend sa place normale */
+}
+
+
+
+
+
+
+
+
+.nav-item.dropdown:hover #products-dropdown,
+.nav-item.dropdown:hover .dropdown-menu.dropdown-list,
+.dropdown-menu:hover {
+    display: block;
+}
+
+.nav-links a:hover {
+    color: #7e7979; /* Couleur rouge au survol */
+}
+
+.nav-item.dropdown {
+    position: relative;
+    padding-bottom: 20px; /* Crée une zone invisible qui maintient le menu ouvert */
+    margin-bottom: -20px;
+}
+
+/* Boutons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-primary {
+
+    background-color: rgb(51, 51, 205);
+    color: var(rgb(238, 236, 245));
+    padding: 18px 50px;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 20px 15px;
+}
+
+.btn-primary:hover {
+    background-color: hsl(0, 0%, 1%);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 3.5px solid #f4f3f3e2;
+    color: var(--text-color);
+    border-radius: 5px;
+}
+
+.btn-secondary:hover {
+    /* border-color: black; */
+    background-color: #f0efefe6;
+    color: #484848;
+}
+
+/* Menu Mobile (Caché sur desktop pour l'instant) */
+.mobile-menu-btn {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* =========================================
+     3. HERO SECTION (Vidéo + Titre)
+     ========================================= */
+.hero-section {
+    position: relative;
+    height: 80vh; /* Hauteur réduite tout en conservant la structure */
+    min-height: 620px;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement (ou change à 'flex-start' pour aligner à gauche comme l'original) */
+    overflow: hidden;
+}
+
+/* La Vidéo de fond */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La vidéo couvre tout l'écran sans être déformée */
+    object-position: center center;
+}
+
+/* L'assombrissement (Overlay) pour lire le texte */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(5,5,5,0.3) 0%, rgba(5,5,5,0.8) 100%);
+    z-index: 0;
+}
+
+/* Le contenu texte */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    /* text-align: center; L'original est un peu plus à gauche, mais centrer c'est joli aussi */
+    max-width: 800px;
+    /* padding-top: 60px; descend un peu le texte pour ne pas être caché par le menu */
+    flex-direction: column;
+}
+
+.hero-title {
+    font-size: 1rem; /* Très grand titre */
+    line-height: 1.5;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    text-transform: uppercase; /* Style militaire/tech */
+    position: absolute; /* Aligne le titre à gauche */
+    left: 70px;
+     top: 50px;
+}
+.hero-cta {
+    /* display: flex; */
+    gap: 20px;
+    position: absolute;
+    left: 70px;
+    top: 200px;
+}
+
+.hero-text {
+    font-size: 5rem;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    padding: 50px 0; /* Espace autour du texte */
+    display: flex;
+    text-align: left;
+    margin-left: 60px;
+    flex-direction: column;
+}
+
+.hero-text span {
+    color: #fff;
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.hero-text span:nth-child(2) {
+    color: #fff;
+    font-weight: 700;
+     
+}
+
+/* =========================================
+     4. RESPONSIVE (Mobile)
+     ========================================= */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Cache les liens sur mobile */
+    }
+    
+    .mobile-menu-btn {
+        display: block; /* Affiche le burger */
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content {
+        text-align: left; /* Sur mobile, on aligne souvent à gauche */
+        padding: 0 20px;
+    }
+}
+
