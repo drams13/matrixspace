@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MatrixSpace Clone</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 
@@ -33,7 +36,7 @@
 
                 <!-- DROPDOWN PRODUCTS -->
                 <li class="nav-item dropdown">
-                    <a href="javascript:void(0)" class="nav-link-trigger">Produits ▾</a>
+                    <a href="javascript:void(0)" class="nav-link-trigger">Produits</a>
                     <div id="products-dropdown" class="dropdown-menu">
                         
                         <div class="dropdown-grid">
@@ -78,7 +81,7 @@
 
                 <!-- Autres liens (Placeholder pour l'instant) -->
                 <li class="nav-item dropdown">
-                    <a href="javaScript:void(0);" class="nav-link-trigger">Cas d'utilisation ▾</a>
+                    <a href="javaScript:void(0);" class="nav-link-trigger">Cas d'utilisation</a>
                     <div id="products-dropdown" class="dropdown-menu-use-cases">
 
                         <div class="dropdown-grid-use-cases">
@@ -121,7 +124,7 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a href="javaScript:void(0);" class="nav-link-trigger">Industries ▾</a>
+                    <a href="javaScript:void(0);" class="nav-link-trigger">Industries</a>
                     <div id="products-dropdown" class="dropdown-menu-industries">
 
                         <div class="dropdown-grid-industries">
@@ -190,10 +193,8 @@
                     </div>  
                 </li>
                 
-
-
                 <li class="nav-item dropdown">
-                    <a href="javaScript:void(0);" class="nav-link-trigger">Entreprise ▾</a>
+                    <a href="javaScript:void(0);" class="nav-link-trigger">Entreprise</a>
                     <ul class="dropdown-menu dropdown-list">
                         
                         <li>
@@ -264,6 +265,7 @@
                 Déploiement partous.<br> Détection claire.Défense <br> assurée.
         </p>
     </div>
+    
     <!-- =========================================
          2. LA SECTION HERO (L'écran d'accueil)
          ========================================= -->
@@ -295,7 +297,561 @@
         </div>
     </header>
 
-    <!-- Le reste du contenu viendra ici -->
+        <!-- =========================================
+         2. SECTION THREATS (MENACES DRONES)
+         ========================================= -->
+    <section class="section-threats">
+        <div class="container">
+            <div class="threats-wrapper">
+                
+                <!-- Partie Texte (Gauche) -->
+                <div class="threats-content">
+                    <h2 class="threats-title">
+                        Les menaces de <br> drones sont omniprésentes. La <br> couverture <br> médiatique,elle, ne <br> l'est pas.                    </h2>
+                    <p class="threats-text">
+                        Les drones non autorisés perturbent les opérations lors de rassemblements publics, sur des sites militaires et des campus. Les détecter est un défi pour les utilisateurs, difficile à mettre à l'échelle et coûteux. Cela crée un fossé entre là où la protection est nécessaire et la capacité de l'opérateur à protéger.
+                    </p>
+                </div>
 
+                <!-- Partie Image (Droite) -->
+                <div class="threats-image-box">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69653156dcd8d5d248f9d7eb_home-threats-image.avif" alt="MatrixSpace 360 Radar" class="threats-img">
+                    <p class="threats-label">Radar MatrixSpace<br>  <span class="offset-360"> 360 </span> </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+        <!-- =========================================
+         4. SECTION SOFTWARE (Texte défilant + Cartes)
+         ========================================= -->
+    <section class="section-software">
+        
+        <!-- Titre introductif de la section -->
+        <div class="container">
+            <div class="software-intro">
+                <h2>Nous fournissons des <br> systèmes de détection <br>de drones anti-drones <br> abordables, faciles à<br> utiliser et évolutifs</h2>
+                <p>Chaque utilisateur peut protéger les espaces <br> sensibles, petits ou grands, contre les drones <br> dangereux. Fini les fausses alertes ! Notre <br> plateforme IA, de la périphérie au cloud, <br> centralise les données de multiples capteurs pour <br> accélérer les prises de décision et alimenter les <br> systèmes autonomes.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="software-grid">
+                <div class="software-intro-1">
+                    <h3>Alerte précoce</h3>
+                    <p>MatrixSpace AiCloud permet aux utilisateurs de définir <br> des zones d'alerte personnalisées et de recevoir des <br> notifications instantanées, où qu'ils soient, lorsqu'un <br> objet pénètre dans un espace aérien restreint. Les <br> alertes sont consultables sur tous les appareils : <br> smartphone, tablette, ordinateur ou centre de <br> commandement et de contrôle.</p>
+                    <span class="learn">Explorez les fonctionnalités de la plateforme d'IA ↗</span>
+                </div>
+
+                <!-- COLONNE DROITE : LES CARTES DE CONTENU -->
+                <!-- <div class="software-marquee-column"> -->
+                    
+                    <!-- Bandeau 1 -->
+                    <!-- <div class="marquee-wrapper">
+                        <div class="marquee-content" style="animation-duration: 20s;">
+                            <span class="marquee-item">Alerte Précoce</span>
+                            <span class="marquee-item">Alerte Précoce</span>
+                            <span class="marquee-item">Alerte Précoce</span>
+                            <span class="marquee-item">Alerte Précoce</span>
+                            <span class="marquee-item">Alerte Précoce</span>
+                            <span class="marquee-item">Alerte Précoce</span>
+                        </div>
+                    </div> -->
+
+                    <!-- Bandeau 2 -->
+                    <!-- <div class="marquee-wrapper">
+                        <div class="marquee-content" style="animation-duration: 25s; animation-direction: reverse;">
+                            <span class="marquee-item">Signaux Multiples, Une Vraie Piste</span>
+                            <span class="marquee-item">Signaux Multiples, Une Vraie Piste</span>
+                            <span class="marquee-item">Signaux Multiples, Une Vraie Piste</span>
+                            <span class="marquee-item">Signaux Multiples, Une Vraie Piste</span>
+                        </div>
+                    </div> -->
+
+                    <!-- Bandeau 3 -->
+                    <!-- <div class="marquee-wrapper">
+                        <div class="marquee-content" style="animation-duration: 22s;">
+                            <span class="marquee-item">Réseaux Radar d'Entreprise</span>
+                            <span class="marquee-item">Réseaux Radar d'Entreprise</span>
+                            <span class="marquee-item">Réseaux Radar d'Entreprise</span>
+                            <span class="marquee-item">Réseaux Radar d'Entreprise</span>
+                        </div>
+                    </div> -->
+
+                <!-- </div> -->
+
+                <!-- COLONNE DROITE : LES CARTES DE CONTENU -->
+                <div class="software-cards-column">
+                    <div class="software-cards-inner">
+                    <!-- Carte 01 -->
+                    <div class="software-card">
+                        <div class="card-number"></div>
+                        <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69656d4b599ed967302f2832_da036c9ad52676e1fe1cb28e1f6cea89_home-software-img-3.avif" alt="Interface Alertes" class="card-image">
+                    </div>
+
+                    <div class="software-card">
+
+                        <div class="card-image ai-radar">
+                          
+                          <div class="radar-core"></div>
+                          <div class="scan-line"></div>
+                      
+                          <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </div>
+                      
+                        </div>
+                      
+                      </div>
+                        
+                    <!-- Carte 03 -->
+                    <div class="software-card">
+                        <div class="card-number"></div>
+                        <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69656d4b0ed887dcb8845706_b4ab5338b58a576ec326cdd20d504eb9_home-software-img-1.avif" alt="Carte Réseau" class="card-image">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- =========================================
+         5. SECTION PRODUITS (CARROUSEL TABS)
+         ========================================= -->
+    <section class="section-products">
+        <div class="container">
+            
+            <!-- En-tête des onglets (Boutons) -->
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="openTab(event, 'tab1')">Fusion 360</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab2')">AiCloud</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab3')">Expéditionnaire</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab4')">Radar 360</button>
+            </div>
+
+            <!-- Contenu des onglets -->
+            <div class="tabs-content">
+
+                <!-- TAB 1: FUSION 360 -->
+                <div id="tab1" class="tab-pane active">
+                    <div class="product-layout">
+                        <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69665a1844a9f1f1d46c8d4b_Fusion%20360%20-%20Desktop.avif" alt="Fusion 360" class="product-img">
+                        <div class="product-info">
+                            <span class="product-number">01</span>
+                            <h3>Fusion 360</h3>
+                            <p>Des capteurs radar, d'identification à distance et <br> optiques fonctionnent de concert pour détecter et <br> suivre les drones. Conçu pour la lutte anti-drones <br> aux abords de sites critiques.</p>
+                            <a href="#" class="btn-link">Apprendre encore  plus ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: AICLOUD -->
+                <div id="tab2" class="tab-pane">
+                    <div class="product-layout">
+                        <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/696e78c8f418b36f105c7745_ai-cloud-desktop-img.avif" alt="AiCloud" class="product-img">
+                        <div class="product-info">
+                            <span class="product-number">02</span>
+                            <h3>MatrixSpace <br> AiCloud</h3>
+                            <p>Le seul cloud natif d'IA pour une détection multi-<br>capteurs transparente des drones et une analyse <br> approfondie de l'espace aérien.</p>
+                            <a href="#" class="btn-link">Apprendre encore  plus ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: EXPEDITIONARY -->
+                <div id="tab3" class="tab-pane">
+                    <div class="product-layout">
+                        <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69665a18b63ff91e382f3331_Expeditionary%20-%20Desktop.avif" alt="Expeditionary" class="product-img">
+                        <div class="product-info">
+                            <span class="product-number">03</span>
+                            <h3>Expeditionary</h3>
+                            <p>Détectez, classifiez et suivez les objets aériens en <br> périphérie du champ de bataille, quel que soit leur <br> déplacement. Les types de menaces sont identifiés <br> automatiquement et les résultats sont intégrés aux <br> systèmes de commandement existants. Le tout en <br> minimisant les émissions.</p>
+                            <a href="#" class="btn-link">Apprendre encore  plus ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: 360 RADAR -->
+                <div id="tab4" class="tab-pane">
+                    <div class="product-layout">
+                        <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69665a18e0e0be3971771e03_MatrixSpace%20360%20Radar%20-%20Desktop.avif" alt="360 Radar" class="product-img">
+                        <div class="product-info">
+                            <span class="product-number">04</span>
+                            <h3>Radar MatrixSpace <br> 360</h3>
+                            <p>Systèmes radar fixes et portables conçus pour la <br> surveillance de l'espace aérien à basse altitude,<br> avec des options de déploiement rapide ou <br> d'installation permanente.</p>
+                            <a href="#" class="btn-link">Apprendre encore  plus ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Le reste du contenu viendra ici -->
+    <script>
+        function openTab(evt, tabName) {
+            // 1. Cacher tous les contenus d'onglets
+            var i, tabContent, tabLinks;
+            tabContent = document.getElementsByClassName("tab-pane");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+                tabContent[i].classList.remove("active");
+            }
+    
+            // 2. Retirer la classe "active" de tous les boutons
+            tabLinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+    
+            // 3. Afficher l'onglet actuel et ajouter la classe "active" au bouton cliqué
+            document.getElementById(tabName).style.display = "flex";
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+        <!-- =========================================
+         6. SECTION PARTENAIRES (LOGOS)
+         ========================================= -->
+    <section class="section-partners">
+        <div class="container">
+            
+            <div class="partners-header">
+                <h2>Partenaires</h2>
+                <p>Nous travaillons avec des partenaires d'entreprise commerciale, d'agence publique et militaire aux États-Unis, ainsi qu'avec des partenaires alliés pour soutenir les efforts de contre-mesure drone et de sécurité publique.</p>
+                <div class="partners-disclaimer">
+                    <small>L'utilisation de l'identité d'une agence fédérale américaine n'implique pas ou ne constitue pas une approbation.</small>
+                </div>
+            </div>
+
+            <!-- Grille de Logos -->
+            <div class="partners-grid">
+                
+                <div class="partner-item">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69667fa8e0a2b2a629ff570e_DroneSense%20logo.avif" alt="DroneSense Logo">
+                </div>
+
+                <div class="partner-item">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69667fa8274ae3862b71b726_Axis%20Communications%20logo.avif" alt="Axis Communications Logo">
+                </div>
+
+                <div class="partner-item">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69667fa974394689bacd0d88_Defense%20Innovation%20Unit%20logo.avif" alt="Defense Innovation Unit Logo">
+                </div>
+
+                <div class="partner-item">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69667fa8496ccd7c5bdffa55_US%20Army%20Tech%20logo.avif" alt="US Army Tech Logo">
+                </div>
+
+                <div class="partner-item">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69667fa82720121fdc330aa1_Dell%20Technologies%20logo.avif" alt="Dell Technologies Logo">
+                </div>
+
+                <div class="partner-item">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69667fa8322e14d70d4b2e1e_L3Harris%20logo.avif" alt="L3Harris Logo">
+                </div>
+
+                <div class="partner-item">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69667fa8a2b301bddaaf25a8_US%20Department%20of%20Homeland%20Security%20logo.avif" alt="DHS Logo">
+                </div>
+
+                <div class="partner-item">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69667fa858042d1d914ea422_Palm%20Springs%20Police%20Department%20logo.avif" alt="Palm Springs Police Logo">
+                </div>
+
+                <div class="partner-item">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69667fa87c6b3c8660cd372d_Northeastern%20University%20logo.avif" alt="Northeastern University Logo">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- =========================================
+         7. SECTION INDUSTRIES (CARROUSEL / SLIDER)
+         ========================================= -->
+    <section class="section-industries">
+        <div class="container">
+            
+            <div class="industries-top">
+                <h2>Détection précise et <br> informations <br> exploitables pour votre<br>secteur d'activité</h2>
+                
+                <!-- Flèches de navigation -->
+                <div class="slider-arrows">
+                    <div class="arrow-btn swiper-button-prev">←</div>
+                    <div class="arrow-btn swiper-button-next">→</div>
+                </div>
+            </div>
+
+            <!-- Le Conteneur Swiper -->
+            <div class="swiper industries-swiper">
+                <div class="swiper-wrapper">
+                    
+                    <!-- CARTE 1: Public Safety -->
+                    <div class="swiper-slide">
+                        <a href="#" class="industries-card">
+                            <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69657391dcdb8f922ba5da74_home-industry-img-1.avif" alt="Public Safety" class="card-thumb">
+                            <div class="card-content">
+                                <h3>Sécurité publique et sûreté</h3>
+                                <p>Acquérir la connaissance de la situation et les <br> informations pratiques nécessaires pour prendre des <br> décisions rapides, cruciales pour la sécurité de vos <br> équipes et du grand public.</p>
+                                <span class="card-link">Apprendre encore  plus ↗</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- CARTE 2: Defense -->
+                    <div class="swiper-slide">
+                        <a href="#" class="industries-card">
+                            <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/696573917d941f495fc6ba41_home-industry-img-2.avif" alt="Defense" class="card-thumb">
+                            <div class="card-content">
+                                <h3>Défense</h3>
+                                <p>Des solutions de détection inédites, rapides et faciles à <br> déployer, pour toutes les conditions. Analysez en temps <br> réel les situations évolutives, en toute discrétion.</p>
+                                <span class="card-link">Apprendre encore  plus ↗</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- CARTE 3: Critical Infrastructure -->
+                    <div class="swiper-slide">
+                        <a href="#" class="industries-card">
+                            <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/6965739103caa676e892972a_home-industry-img-3.avif" alt="Infrastructure" class="card-thumb">
+                            <div class="card-content">
+                                <h3>Infrastructure Critique</h3>
+                                <p>Numérisez les environnements extérieurs grâce à des <br> capteurs évolutifs et résistants aux intempéries, conçus <br> pour une surveillance 24h/24 et 7j/7 et une intégration <br> aux systèmes existants.</p>
+                                <span class="card-link">Apprendre encore  plus  ↗  </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- CARTE 4: Utilities -->
+                    <div class="swiper-slide">
+                        <a href="#" class="industries-card">
+                            <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/696573910b9e8d6064e16dd5_home-industry-img-4.avif" alt="Utilities" class="card-thumb">
+                            <div class="card-content">
+                                <h3>Service publique et structure linéaire</h3>
+                                <p>Les solutions radar basées sur l'IA améliorent la <br> surveillance des infrastructures grâce à la détection des <br> menaces en temps réel et à des inspections efficaces <br> dans des environnements difficiles.</p>
+                                <span class="card-link">Apprendre encore  plus ↗</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- CARTE 5: Smart Cities -->
+                    <div class="swiper-slide">
+                        <a href="#" class="industries-card">
+                            <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69657391564c60d195ac161a_home-industry-img-5.avif" alt="Smart Cities" class="card-thumb">
+                            <div class="card-content">
+                                <h3>Villes Intelligentes</h3>
+                                <p>Tirer parti des technologies radar avancées pour <br> améliorer la sécurité urbaine, la gestion du trafic et la <br> surveillance des infrastructures en temps réel et dans <br> toutes les conditions.</p>
+                                <span class="card-link">Apprendre encore  plus ↗</span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const swiper = new Swiper(".industries-swiper", {
+            slidesPerView: 'auto', /* Ajuste le nombre de cartes selon la largeur */
+            spaceBetween: -830, /* Espace entre les cartes */
+            speed: 100,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    });
+</script>
+
+
+
+    <!-- =========================================
+         8. SECTION ACTUALITÉS (COMMUNIQUÉS DE PRESSE)
+         ========================================= -->
+    <section class="section-news">
+        <div class="container">
+            
+            <div class="news-header">
+                <h2>Communiqués de presse</h2>
+                <div class="news-links">
+                    <a href="#" class="text-link">Vidéos ↗</a>
+                    <a href="#" class="text-link">Événements ↗</a>
+                </div>
+            </div>
+
+            <!-- Grille d'articles -->
+            <div class="news-grid">
+                
+                <!-- ARTICLE 1 -->
+                <article class="news-card">
+                    <a href="#" class="news-thumb">
+                        <img src="https://cdn.prod.website-files.com/67572f3b126958507294555d/6945f6c8cf8c2763e81fb652_DIU%20Challnege%20Graphic%202.jpg" alt="Actualité 1">
+                    </a>
+                    <div class="news-tags">
+                        <span class="tag">Contre-drone       / Défense / Détection de drones</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>2 Victoires majeures dans les compétitions militaires</h3>
+                        <p>Nous sommes fiers d'avoir remporté le concours DIU C-UAS Low-Cost Sensing ainsi que la compétition..</p>
+                        <a href="#" class="card-link">Lire la suite ↗</a>
+                    </div>
+                </article>
+
+                <!-- ARTICLE 2 -->
+                <article class="news-card">
+                    <a href="#" class="news-thumb">
+                        <img src="https://cdn.prod.website-files.com/67572f3b126958507294555d/6937286a565369efb3c7b1a2_Portable%20360%20social%20%5Bv2%5D.jpg" alt="Actualité 2">
+                    </a>
+                    <div class="news-tags">
+                        <span class="tag">Contre-drone / Innovation / Détection de drones</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Présentation du Radar 360 Portable</h3>
+                        <p>La protection de l'espace aérien lors d'opérations temporaires – qu'il s'agisse d'événements dans des...</p>
+                        <a href="#" class="card-link">Lire la suite ↗</a>
+                    </div>
+                </article>
+
+                <!-- ARTICLE 3 -->
+                <article class="news-card">
+                    <a href="#" class="news-thumb">
+                        <img src="https://cdn.prod.website-files.com/67572f3b126958507294555d/68c3009279a3e0a91db3777b_Multi%20Sensors.jpg" alt="Actualité 3">
+                    </a>
+                    <div class="news-tags">
+                        <span class="tag">Innovation / Intelligence artificielle / Intégration API</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Open by Design : L'intégration facile</h3>
+                        <p>Chez MatrixSpace, tout ce que nous développons est conçu pour une intégration et une extensibilité...</p>
+                        <a href="#" class="card-link">Lire la suite ↗</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+        <!-- =========================================
+         7. SECTION CTA FINAL (Appel à l'action)
+         ========================================= -->
+    <section class="section-cta">
+        <div class="container">
+            <div class="cta-wrapper">
+                
+                <!-- Partie Texte -->
+                <div class="cta-content">
+                    <h2>Prêt à découvrir la détection <br> par IA ?</h2>
+                    <p>
+                        Tout ce qu'il vous faut pour passer de la <br> déballage à la détection opérationnelle en <br> moins de 5 minutes. Procurez-vous votre kit <br> d'expédition radar dès aujourd'hui.
+                    </p>
+                    <a href="#" class="btn btn-primary btn-large">Commandez le vôtre maintenant</a>
+                </div>
+
+                <!-- Partie Image -->
+                <div class="cta-image-box">
+                    <img src="https://cdn.prod.website-files.com/67471f312596a0f4c234affc/69668554447b4d86999465fc_home-cta-img.avif" alt="Kit Radar" class="cta-img">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+        <!-- =========================================
+         9. FOOTER (PIED DE PAGE)
+         ========================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <!-- Colonne 1 : Logo (Optionnel, on peut le mettre ici ou en bas) -->
+                <div class="footer-col footer-brand">
+                    <a href="#" class="footer-logo-text">MatrixSpace</a>
+                    <p class="footer-desc">Détection de drones IA et radar de niveau militaire.</p>
+                </div>
+
+                <!-- Colonne 2 : Produits -->
+                <div class="footer-col">
+                    <h4>Produits</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">AI Platform</a></li>
+                        <li><a href="#">Fusion 360°</a></li>
+                        <li><a href="#">360° Radar</a></li>
+                        <li><a href="#">Expeditionary Radar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 3 : Cas d'usage -->
+                <div class="footer-col">
+                    <h4>Cas d'usage</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sécurité de l'espace aérien</a></li>
+                        <li><a href="#">Sécurité périmétrique</a></li>
+                        <li><a href="#">Contre Drone</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 4 : Entreprise -->
+                <div class="footer-col">
+                    <h4>Entreprise</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Contactez-nous</a></li>
+                        <li><a href="#">Actualités</a></li>
+                        <li><a href="#">À propos</a></li>
+                        <li><a href="#">Carrières</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Colonne 5 : Newsletter -->
+                <div class="footer-col newsletter-col">
+                    <h4>Abonnez-vous</h4>
+                    <p class="footer-note">Recevez les dernières actualités sur la technologie de détection.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
+                        <input type="email" placeholder="Votre adresse email" required>
+                        <button type="submit">S'inscrire</button>
+                    </form>
+                    <small class="legal-note">En vous inscrivant, vous acceptez notre <a href="#">Politique de confidentialité</a>.</small>
+                </div>
+
+            </div>
+
+            <!-- Barre du bas : Réseaux sociaux et Légal -->
+            <div class="footer-bottom">
+                
+                <div class="footer-copyright">
+                    <span>© 2026 MatrixSpace. Tous droits réservés.</span>
+                    <div class="legal-links">
+                        <a href="#">Conditions d'utilisation</a>
+                        <span> / </span>
+                        <a href="#">Mentions Légales</a>
+                    </div>
+                </div>
+
+                <div class="footer-social">
+                    <span>Suivez-nous</span>
+                    <a href="#" class="social-icon">Twitter/X</a>
+                    <a href="#" class="social-icon">LinkedIn</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
